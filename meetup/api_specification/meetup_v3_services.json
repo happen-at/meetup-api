@@ -3,6 +3,41 @@
     "apiVersion": 3,
     "description": "Meetup API v3 methods",
     "operations": {
+        "FindEvents": {
+            "version": "3",
+            "name": "FindEvents",
+            "httpMethod": "GET",
+            "parameters": {
+                "fields": {
+                    "location": "query",
+                    "required": false,
+                    "description": "Request that additional fields (separated by commas) be included in the output"
+                },
+                "only": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "lat": {
+                    "location": "query",
+                    "required": false,
+                    "description": "A valid latitude and longitude, limits the returned events to those within radius miles"
+                },
+                "lon": {
+                    "location": "query",
+                    "required": false,
+                    "description": "A valid latitude and longitude, limits the returned events to those within radius miles"
+                },
+                "omit": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                }
+            },
+            "summary": "Returns list of upcoming events based on location.",
+            "uri": "/find/events",
+            "notes": "Returns a list of event objects ordered chronologically."
+        },
         "CreateBatch": {
             "version": "3",
             "name": "CreateBatch",
